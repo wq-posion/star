@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="show">
+			
+		</div>
+		<script type="text/javascript">
+			
+			var a = 0;
+			
+			var div = document.getElementById('show')
+			div.innerHTML = a;
+			
+/*
+ 			//定时器的时间间隔 值 1000+代码执行的时间
+			setInterval(function(){
+				console.time()
+				a++;
+				div.innerHTML = a;
+				console.timeEnd()
+				
+			},1000);
+ * 
+ * */
+		
+		var start = new Date('Thu Dec 20 2019 18:03:31 GMT+0800 (中国标准时间)')
+		console.log(start)
+		
+		
+		setInterval(function(){
+			var now = new Date();
+			var c = start - now;
+			
+			
+			var s = parseInt(c/1000)%60;
+			console.log()
+			s=toS(s)
+			
+			var m = parseInt(c/1000/60)%60;
+			m=toS(m)
+			var h = parseInt(c/1000/60/60);
+			h = toS(h)
+			
+			div.innerHTML = h+':'+m+':'+s
+			
+			
+		},1000)
+			
+		function toS(num){
+			num=num+'';
+			if(num.length<2){
+				num='0'+num;
+			}
+			return num;
+			
+		}
+			
+			
+		</script>
+	</body>
+</html>
